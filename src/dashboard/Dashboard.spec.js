@@ -1,9 +1,11 @@
-import React from 'react';
-import { render } from 'react-testing-library';
-import Dashboard from './Dashboard';
+// Test away!
 
-// Test away
+import React from "react";
+import { render } from "@testing-library/react";
+import Dashboard from "./Dashboard";
 
-test('App renders successfully', () => {
-    render(<Dashboard />)
-})
+test("Dashboard renders display and control", () => {
+  const { getByTestId } = render(<Dashboard />);
+  getByTestId(/displayTest/i);
+  getByTestId(/controlTest/i);
+});
