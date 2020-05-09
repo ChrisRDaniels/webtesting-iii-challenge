@@ -1,1 +1,11 @@
-// Test away
+// Test away!
+
+import React from "react";
+import { render } from "@testing-library/react";
+import Dashboard from "./Dashboard";
+
+test("Dashboard renders display and control", () => {
+  const { getByTestId } = render(<Dashboard />);
+  getByTestId(/displayTest/i);
+  getByTestId(/controlTest/i);
+});
